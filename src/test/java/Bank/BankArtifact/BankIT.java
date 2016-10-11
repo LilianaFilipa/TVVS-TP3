@@ -41,7 +41,14 @@ public class BankIT {
 	@Test	
 	public void testWithdrawAmount() {	
 		// use the functions depositAccount(Client), getClientByName(String) & withdrawClientAccount(Client) from Bank
-		assertTrue(false);
+		bank = new Bank();
+		Client carlos = new Client("Carlos");
+		bank.addClient(carlos);
+		
+		bank.depositAccount(bank.getClientByName("Carlos"),(float) 100.0);
+		bank.withdrawClientAccount(bank.getClientByName("Carlos"), (float) 20.0);
+		
+		assertEquals((float) bank.getClientByName("Carlos").getAccount().getAmount(), (float) 80.0, 0.0001);
 	}
 	
 	@Test
