@@ -1,5 +1,8 @@
 package Bank.BankArtifact;
 
+
+
+
 public class Account {
 	private float amount;
 
